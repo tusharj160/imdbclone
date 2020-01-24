@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+  <p>Please select your rating for &nbsp; {{data.animal}} </p>
+  <star-rating [maxScore]="10" [forDisplay]="false" (rateChanged)="onRateChange($event)"></star-rating>
+  <div>Rating: {{score}}</div>
+  
+  <mat-form-field class="example-full-width">
+    <textarea matInput [(ngModel)]="data.review" placeholder="Leave a review"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
